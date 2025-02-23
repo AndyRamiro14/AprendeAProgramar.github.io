@@ -1,6 +1,6 @@
-# Aprende Programación 🚀 \
+# Aprende Programación 🚀 
 
-![image](https://github.com/user-attachments/assets/dd9c37b2-e8d2-41f4-9957-98e9bfb6913c)\
+![image](https://github.com/user-attachments/assets/dd9c37b2-e8d2-41f4-9957-98e9bfb6913c)
 
 
 Bienvenido a **Aprende a Programar**, una página web diseñada para ayudarte a aprender los conceptos básicos de programación, desde programación estructurada hasta programación orientada a objetos (POO). 💻📚
@@ -46,7 +46,8 @@ La página fue subida y desplegada utilizando **GitHub Pages**. Aquí te explica
    - Una vez configurado, la página quedó disponible en:
      ```
      https://andyramiro14.github.io/AprendeAProgramar.github.io/pages/index.html
-     ``` 🌐
+
+     🌐
 
 ---
 
@@ -65,7 +66,8 @@ Si deseas ejecutar la página en tu computadora localmente, sigue estos pasos:
    - Abre una terminal y ejecuta el siguiente comando para clonar el repositorio:
      ```bash
      git clone https://github.com/andyramiro14/AprendeAProgramar.github.io.git
-     ``` 📥
+     
+     📥
 
 2. **Navegar al Directorio del Proyecto**:
    - Ve a la carpeta del proyecto:
