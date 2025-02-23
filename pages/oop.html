@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación Orientada A Objetos</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="../assets/images/site.webmanifest" />
+
+    <!-- Íconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Estilos para bloques de código -->
+    <style>
+        pre code {
+            display: block;
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .code-container {
+            margin-bottom: 20px;
+        }
+        .code-container label {
+            display: block;
+            margin-top: 10px;
+        }
+        .code-container input {
+            margin: 5px 0;
+            padding: 5px;
+            width: 100px;
+        }
+        .code-container button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .code-container button:hover {
+            background-color: #45a049;
+        }
+        .code-container p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="structured.html"><i class="fas fa-code"></i> Programación Estructurada</a></li>
+                <li><a href="oop.html"><i class="fas fa-object-group"></i> POO</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> Recursos</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="poo" class="fade-in">
+            <h1><i class="fas fa-object-group"></i> Programación Orientada a Objetos (POO)</h1>
+            <p>
+                La <strong>Programación Orientada a Objetos (POO)</strong> es un paradigma de programación que organiza el código en "objetos", que son instancias de "clases". Estos objetos contienen datos (atributos) y comportamientos (métodos). La POO se basa en cuatro principios fundamentales: encapsulamiento, herencia, polimorfismo y abstracción.
+            </p>
+            <p>
+                Este enfoque permite crear programas más modulares, reutilizables y fáciles de mantener. Es ampliamente utilizado en lenguajes como Java, C++, Python y JavaScript.
+            </p>
+            <img src="../assets/images/oop.jpg" alt="POO" class="responsive-img">
+        </section>
+
+        <section>
+            <h2><i class="fas fa-cubes"></i> Conceptos Clave</h2>
+            <p>
+                A continuación, se describen los conceptos fundamentales de la POO, que son esenciales para entender cómo se construyen programas orientados a objetos:
+            </p>
+            <ul>
+                <li>
+                    <strong>Clases:</strong>
+                    <p>
+                        Una clase es una plantilla o modelo para crear objetos. Define las propiedades (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    saludar() {
+        return `Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`;
+    }
+}
+                        </code></pre>
+                        <label for="nombrePersona">Nombre:</label>
+                        <input type="text" id="nombrePersona" value="Juan">
+                        <label for="edadPersona">Edad:</label>
+                        <input type="number" id="edadPersona" value="25">
+                        <button onclick="ejecutarClase()">Ejecutar código</button>
+                        <p id="resultadoClase"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Objetos:</strong>
+                    <p>
+                        Un objeto es una instancia de una clase. Representa una entidad específica con sus propios valores para los atributos definidos en la clase.
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+let persona = new Persona("Ana", 30);
+console.log(persona.saludar()); // Output: Hola, mi nombre es Ana y tengo 30 años.
+                        </code></pre>
+                        <label for="nombreObjeto">Nombre:</label>
+                        <input type="text" id="nombreObjeto" value="Ana">
+                        <label for="edadObjeto">Edad:</label>
+                        <input type="number" id="edadObjeto" value="30">
+                        <button onclick="ejecutarObjeto()">Ejecutar código</button>
+                        <p id="resultadoObjeto"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Herencia:</strong>
+                    <p>
+                        La herencia permite que una clase (subclase) herede atributos y métodos de otra clase (superclase). Esto promueve la reutilización de código.
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+class Estudiante extends Persona {
+    constructor(nombre, edad, curso) {
+        super(nombre, edad);
+        this.curso = curso;
+    }
+
+    estudiar() {
+        return `${this.nombre} está estudiando ${this.curso}.`;
+    }
+}
+                        </code></pre>
+                        <label for="nombreEstudiante">Nombre:</label>
+                        <input type="text" id="nombreEstudiante" value="Carlos">
+                        <label for="edadEstudiante">Edad:</label>
+                        <input type="number" id="edadEstudiante" value="20">
+                        <label for="cursoEstudiante">Curso:</label>
+                        <input type="text" id="cursoEstudiante" value="Matemáticas">
+                        <button onclick="ejecutarHerencia()">Ejecutar código</button>
+                        <p id="resultadoHerencia"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Encapsulación:</strong>
+                    <p>
+                        La encapsulación es el mecanismo para ocultar los detalles internos de una clase y exponer solo lo necesario. Esto se logra mediante el uso de modificadores de acceso (como <code>private</code> o <code>public</code>).
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+class CuentaBancaria {
+    constructor(titular, saldo) {
+        this.titular = titular;
+        this._saldo = saldo; // _saldo es una propiedad "privada"
+    }
+
+    depositar(cantidad) {
+        this._saldo += cantidad;
+    }
+
+    obtenerSaldo() {
+        return this._saldo;
+    }
+}
+                        </code></pre>
+                        <label for="titularCuenta">Titular:</label>
+                        <input type="text" id="titularCuenta" value="María">
+                        <label for="saldoCuenta">Saldo inicial:</label>
+                        <input type="number" id="saldoCuenta" value="1000">
+                        <label for="depositoCuenta">Cantidad a depositar:</label>
+                        <input type="number" id="depositoCuenta" value="500">
+                        <button onclick="ejecutarEncapsulacion()">Ejecutar código</button>
+                        <p id="resultadoEncapsulacion"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Polimorfismo:</strong>
+                    <p>
+                        El polimorfismo permite que una clase tome muchas formas. Por ejemplo, una subclase puede sobrescribir un método de la superclase para proporcionar una implementación específica.
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+class Gato extends Animal {
+    hacerSonido() {
+        return "Miau miau!";
+    }
+}
+
+let miGato = new Gato("Mimi");
+console.log(miGato.hacerSonido()); // Output: Miau miau!
+                        </code></pre>
+                        <label for="nombreGato">Nombre del gato:</label>
+                        <input type="text" id="nombreGato" value="Mimi">
+                        <button onclick="ejecutarPolimorfismo()">Ejecutar código</button>
+                        <p id="resultadoPolimorfismo"></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-code"></i> Ejemplo Práctico</h2>
+            <div class="code-container">
+                <pre><code>
+class Animal {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    hacerSonido() {
+        return "Sonido genérico";
+    }
+}
+
+class Perro extends Animal {
+    hacerSonido() {
+        return "Guau guau!";
+    }
+}
+
+let miPerro = new Perro("Rex");
+console.log(miPerro.hacerSonido()); // Output: Guau guau!
+                </code></pre>
+                <label for="nombrePerro">Nombre del perro:</label>
+                <input type="text" id="nombrePerro" value="Rex">
+                <button onclick="ejecutarPolimorfismoPerro()">Ejecutar código</button>
+                <p id="resultadoPolimorfismoPerro"></p>
+            </div>
+        </section>
+
+        <script>
+            // Función para el ejemplo de clase
+            function ejecutarClase() {
+                try {
+                    class Persona {
+                        constructor(nombre, edad) {
+                            this.nombre = nombre;
+                            this.edad = edad;
+                        }
+
+                        saludar() {
+                            return `Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`;
+                        }
+                    }
+
+                    let nombre = document.getElementById("nombrePersona").value;
+                    let edad = parseInt(document.getElementById("edadPersona").value);
+                    let persona = new Persona(nombre, edad);
+                    document.getElementById("resultadoClase").innerText = persona.saludar();
+                } catch (error) {
+                    document.getElementById("resultadoClase").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de objeto
+            function ejecutarObjeto() {
+                try {
+                    class Persona {
+                        constructor(nombre, edad) {
+                            this.nombre = nombre;
+                            this.edad = edad;
+                        }
+
+                        saludar() {
+                            return `Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`;
+                        }
+                    }
+
+                    let nombre = document.getElementById("nombreObjeto").value;
+                    let edad = parseInt(document.getElementById("edadObjeto").value);
+                    let persona = new Persona(nombre, edad);
+                    document.getElementById("resultadoObjeto").innerText = persona.saludar();
+                } catch (error) {
+                    document.getElementById("resultadoObjeto").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de herencia
+            function ejecutarHerencia() {
+                try {
+                    class Persona {
+                        constructor(nombre, edad) {
+                            this.nombre = nombre;
+                            this.edad = edad;
+                        }
+
+                        saludar() {
+                            return `Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`;
+                        }
+                    }
+
+                    class Estudiante extends Persona {
+                        constructor(nombre, edad, curso) {
+                            super(nombre, edad);
+                            this.curso = curso;
+                        }
+
+                        estudiar() {
+                            return `${this.nombre} está estudiando ${this.curso}.`;
+                        }
+                    }
+
+                    let nombre = document.getElementById("nombreEstudiante").value;
+                    let edad = parseInt(document.getElementById("edadEstudiante").value);
+                    let curso = document.getElementById("cursoEstudiante").value;
+                    let estudiante = new Estudiante(nombre, edad, curso);
+                    document.getElementById("resultadoHerencia").innerText = estudiante.estudiar();
+                } catch (error) {
+                    document.getElementById("resultadoHerencia").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de encapsulación
+            function ejecutarEncapsulacion() {
+                try {
+                    class CuentaBancaria {
+                        constructor(titular, saldo) {
+                            this.titular = titular;
+                            this._saldo = saldo;
+                        }
+
+                        depositar(cantidad) {
+                            this._saldo += cantidad;
+                        }
+
+                        obtenerSaldo() {
+                            return this._saldo;
+                        }
+                    }
+
+                    let titular = document.getElementById("titularCuenta").value;
+                    let saldo = parseFloat(document.getElementById("saldoCuenta").value);
+                    let deposito = parseFloat(document.getElementById("depositoCuenta").value);
+                    let cuenta = new CuentaBancaria(titular, saldo);
+                    cuenta.depositar(deposito);
+                    document.getElementById("resultadoEncapsulacion").innerText = `Saldo actual: ${cuenta.obtenerSaldo()}`;
+                } catch (error) {
+                    document.getElementById("resultadoEncapsulacion").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de polimorfismo
+            function ejecutarPolimorfismo() {
+                try {
+                    class Animal {
+                        constructor(nombre) {
+                            this.nombre = nombre;
+                        }
+
+                        hacerSonido() {
+                            return "Sonido genérico";
+                        }
+                    }
+
+                    class Gato extends Animal {
+                        hacerSonido() {
+                            return "Miau miau!";
+                        }
+                    }
+
+                    let nombre = document.getElementById("nombreGato").value;
+                    let gato = new Gato(nombre);
+                    document.getElementById("resultadoPolimorfismo").innerText = gato.hacerSonido();
+                } catch (error) {
+                    document.getElementById("resultadoPolimorfismo").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo práctico de polimorfismo (perro)
+            function ejecutarPolimorfismoPerro() {
+                try {
+                    class Animal {
+                        constructor(nombre) {
+                            this.nombre = nombre;
+                        }
+
+                        hacerSonido() {
+                            return "Sonido genérico";
+                        }
+                    }
+
+                    class Perro extends Animal {
+                        hacerSonido() {
+                            return "Guau guau!";
+                        }
+                    }
+
+                    let nombre = document.getElementById("nombrePerro").value;
+                    let perro = new Perro(nombre);
+                    document.getElementById("resultadoPolimorfismoPerro").innerText = perro.hacerSonido();
+                } catch (error) {
+                    document.getElementById("resultadoPolimorfismoPerro").innerText = "Error: " + error.message;
+                }
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aprende Programación. Todos los derechos reservados.</p>
+        <br>Andy Garzón</br>
+    </footer>
+
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>

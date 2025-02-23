@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación Estructurada</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="../assets/images/site.webmanifest" />
+
+    <!-- Íconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Estilos para bloques de código -->
+    <style>
+        pre code {
+            display: block;
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .code-container {
+            margin-bottom: 20px;
+        }
+        .code-container label {
+            display: block;
+            margin-top: 10px;
+        }
+        .code-container input {
+            margin: 5px 0;
+            padding: 5px;
+            width: 100px;
+        }
+        .code-container button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .code-container button:hover {
+            background-color: #45a049;
+        }
+        .code-container p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="structured.html"><i class="fas fa-code"></i> Programación Estructurada</a></li>
+            <li><a href="oop.html"><i class="fas fa-object-group"></i> POO</a></li>
+            <li><a href="resources.html"><i class="fas fa-book"></i> Recursos</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main>
+        <section id="programacion-estructurada" class="fade-in">
+            <h1><i class="fas fa-code"></i> Programación Estructurada</h1>
+            <p>
+                La <strong>programación estructurada</strong> es un paradigma de programación que surgió en la década de 1960 como una respuesta a los problemas de complejidad y mantenibilidad en el desarrollo de software. Este enfoque se basa en la idea de que los programas deben estar organizados de manera clara y lógica, utilizando estructuras de control bien definidas.
+            </p>
+            <p>
+                El objetivo principal de la programación estructurada es mejorar la claridad, calidad y facilidad de mantenimiento del código. Para lograr esto, se evitan prácticas como el uso excesivo de saltos incondicionales (<code>goto</code>), que pueden hacer que el código sea difícil de seguir. En su lugar, se promueve el uso de tres estructuras básicas de control:
+            </p>
+            <ul>
+                <li><strong>Secuencia:</strong> Ejecución de instrucciones una después de otra en el orden en que están escritas.</li>
+                <li><strong>Selección (condicionales):</strong> Permite tomar decisiones basadas en condiciones, como las estructuras <code>if</code>, <code>else</code> y <code>switch</code>.</li>
+                <li><strong>Iteración (bucles):</strong> Permite repetir un bloque de código varias veces, como con las estructuras <code>for</code>, <code>while</code> y <code>do-while</code>.</li>
+            </ul>
+            <p>
+                Este enfoque fue popularizado por el teorema del programa estructurado, que demostró que cualquier programa puede escribirse utilizando solo estas tres estructuras. Además, la programación estructurada fomenta la modularidad, dividiendo el código en funciones o procedimientos más pequeños y manejables.
+            </p>
+            <img src="../assets/images/structured.jpg" alt="Programación Estructurada" class="responsive-img">
+        </section>
+
+        <section>
+            <h2><i class="fas fa-cogs"></i> Conceptos Básicos</h2>
+            <p>
+                A continuación, se describen los conceptos fundamentales de la programación estructurada, que son esenciales para entender cómo se construyen programas claros y eficientes:
+            </p>
+            <ul>
+                <li>
+                    <strong>Variables:</strong>
+                    <p>
+                        Las variables son espacios en la memoria de la computadora que se utilizan para almacenar datos. Cada variable tiene un nombre único y un tipo de dato asociado, como números enteros (<code>int</code>), números decimales (<code>float</code>), cadenas de texto (<code>string</code>), entre otros. Las variables permiten que los programas manipulen y almacenen información de manera dinámica.
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+let edad = 25;
+console.log("La edad es: " + edad);
+                        </code></pre>
+                        <label for="edad">Valor de edad:</label>
+                        <input type="number" id="edad" value="25">
+                        <button onclick="ejecutarVariables()">Ejecutar código</button>
+                        <p id="resultadoVariables"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Condicionales:</strong>
+                    <p>
+                        Las estructuras condicionales permiten que un programa tome decisiones basadas en condiciones específicas. La estructura más común es el <code>if</code>, que ejecuta un bloque de código solo si se cumple una condición. También existen variantes como <code>else</code> y <code>else if</code> para manejar múltiples condiciones.
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+if (edad >= 18) {
+    console.log("Eres mayor de edad.");
+} else {
+    console.log("Eres menor de edad.");
+}
+                        </code></pre>
+                        <label for="edadCondicional">Valor de edad:</label>
+                        <input type="number" id="edadCondicional" value="18">
+                        <button onclick="ejecutarCondicionales()">Ejecutar código</button>
+                        <p id="resultadoCondicionales"></p>
+                    </div>
+                    <p>
+                        También puedes usar la estructura <code>switch</code> para manejar múltiples casos:
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+let dia = "Lunes";
+switch (dia) {
+    case "Lunes":
+        console.log("Hoy es Lunes.");
+        break;
+    case "Martes":
+        console.log("Hoy es Martes.");
+        break;
+    default:
+        console.log("No es Lunes ni Martes.");
+}
+                        </code></pre>
+                        <label for="dia">Día de la semana:</label>
+                        <input type="text" id="dia" value="Lunes">
+                        <button onclick="ejecutarSwitch()">Ejecutar código</button>
+                        <p id="resultadoSwitch"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Bucles:</strong>
+                    <p>
+                        Los bucles permiten repetir un bloque de código varias veces. Los más comunes son:
+                        <ul>
+                            <li><code>for</code>: Se utiliza cuando se conoce el número exacto de iteraciones.</li>
+                            <li><code>while</code>: Repite el código mientras se cumpla una condición.</li>
+                            <li><code>do-while</code>: Similar a <code>while</code>, pero garantiza que el bloque de código se ejecute al menos una vez.</li>
+                        </ul>
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+for (let i = 0; i < 5; i++) {
+    console.log("Iteración número: " + i);
+}
+                        </code></pre>
+                        <label for="iteraciones">Número de iteraciones:</label>
+                        <input type="number" id="iteraciones" value="5">
+                        <button onclick="ejecutarBucles()">Ejecutar código</button>
+                        <p id="resultadoBucles"></p>
+                    </div>
+                    <p>
+                        Ejemplo con <code>while</code>:
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+let contador = 0;
+while (contador < 3) {
+    console.log("Contador: " + contador);
+    contador++;
+}
+                        </code></pre>
+                        <label for="contadorWhile">Valor inicial del contador:</label>
+                        <input type="number" id="contadorWhile" value="0">
+                        <button onclick="ejecutarWhile()">Ejecutar código</button>
+                        <p id="resultadoWhile"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Funciones:</strong>
+                    <p>
+                        Las funciones son bloques de código reutilizables que realizan una tarea específica. Permiten dividir un programa en partes más pequeñas y manejables, lo que facilita la lectura, el mantenimiento y la depuración del código. Una función puede recibir parámetros (entradas) y devolver un valor (salida).
+                    </p>
+                    <div class="code-container">
+                        <pre><code>
+function saludar(nombre) {
+    return "Hola, " + nombre + "!";
+}
+
+let mensaje = saludar("Juan");
+console.log(mensaje);
+                        </code></pre>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" value="Juan">
+                        <button onclick="ejecutarFunciones()">Ejecutar código</button>
+                        <p id="resultadoFunciones"></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-laptop-code"></i> Ejemplo Práctico</h2>
+            <div class="code-container">
+                <pre><code>
+function sumar(a, b) {
+    return a + b;
+}
+
+let resultado = sumar(a, b);
+console.log(resultado);
+                </code></pre>
+                <label for="valorA">Valor de a:</label>
+                <input type="number" id="valorA" value="5">
+                <label for="valorB">Valor de b:</label>
+                <input type="number" id="valorB" value="3">
+                <button onclick="ejecutarSuma()">Ejecutar código</button>
+                <p id="resultadoSuma"></p>
+            </div>
+        </section>
+
+        <script>
+            // Función para el ejemplo de variables
+            function ejecutarVariables() {
+                try {
+                    let edad = parseFloat(document.getElementById("edad").value);
+                    document.getElementById("resultadoVariables").innerText = "La edad es: " + edad;
+                } catch (error) {
+                    document.getElementById("resultadoVariables").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de condicionales
+            function ejecutarCondicionales() {
+                try {
+                    let edad = parseFloat(document.getElementById("edadCondicional").value);
+                    let resultado = (edad >= 18) ? "Eres mayor de edad." : "Eres menor de edad.";
+                    document.getElementById("resultadoCondicionales").innerText = resultado;
+                } catch (error) {
+                    document.getElementById("resultadoCondicionales").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de switch
+            function ejecutarSwitch() {
+                try {
+                    let dia = document.getElementById("dia").value;
+                    let resultado = "";
+                    switch (dia) {
+                        case "Lunes":
+                            resultado = "Hoy es Lunes.";
+                            break;
+                        case "Martes":
+                            resultado = "Hoy es Martes.";
+                            break;
+                        default:
+                            resultado = "No es Lunes ni Martes.";
+                    }
+                    document.getElementById("resultadoSwitch").innerText = resultado;
+                } catch (error) {
+                    document.getElementById("resultadoSwitch").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de bucles
+            function ejecutarBucles() {
+                try {
+                    let iteraciones = parseInt(document.getElementById("iteraciones").value);
+                    let resultado = "";
+                    for (let i = 0; i < iteraciones; i++) {
+                        resultado += "Iteración número: " + i + "\n";
+                    }
+                    document.getElementById("resultadoBucles").innerText = resultado;
+                } catch (error) {
+                    document.getElementById("resultadoBucles").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de while
+            function ejecutarWhile() {
+                try {
+                    let contador = parseInt(document.getElementById("contadorWhile").value);
+                    let resultado = "";
+                    while (contador < 3) {
+                        resultado += "Contador: " + contador + "\n";
+                        contador++;
+                    }
+                    document.getElementById("resultadoWhile").innerText = resultado;
+                } catch (error) {
+                    document.getElementById("resultadoWhile").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo de funciones
+            function ejecutarFunciones() {
+                try {
+                    let nombre = document.getElementById("nombre").value;
+                    let mensaje = "Hola, " + nombre + "!";
+                    document.getElementById("resultadoFunciones").innerText = mensaje;
+                } catch (error) {
+                    document.getElementById("resultadoFunciones").innerText = "Error: " + error.message;
+                }
+            }
+
+            // Función para el ejemplo práctico de suma
+            function ejecutarSuma() {
+                try {
+                    let valorA = parseFloat(document.getElementById("valorA").value);
+                    let valorB = parseFloat(document.getElementById("valorB").value);
+                    let resultado = valorA + valorB;
+                    document.getElementById("resultadoSuma").innerText = "Resultado de la suma: " + resultado;
+                } catch (error) {
+                    document.getElementById("resultadoSuma").innerText = "Error: " + error.message;
+                }
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aprende Programación. Todos los derechos reservados.</p>
+        <br>Andy Garzón</br>
+    </footer>
+
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>
