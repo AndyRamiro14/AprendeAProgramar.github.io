@@ -91,10 +91,4 @@ Si deseas ejecutar la página en tu computadora localmente, sigue estos pasos:
 
 ---
 
-## Licencia 📜
-
-Este proyecto está bajo la licencia **MIT**. Para más detalles, consulta el archivo [LICENSE](LICENSE).
-
----
-
 ¡Gracias por visitar **Aprende a Programar**! Esperamos que esta página te sea útil en tu aprendizaje. 😊🚀
